@@ -1,6 +1,22 @@
 # Deli Template — Laravel Implementation Guide
 
-This folder is a mobile-focused HTML/CSS/JavaScript prototype. The data is currently hardcoded and the forms are display placeholders. Replace the placeholder values with Laravel routes, controllers, validation, and database records.
+This folder is a mobile-focused HTML/CSS/JavaScript prototype. The data is currently hardcoded and the forms are display placeholders. Replace the placeholder values with Laravel route
+## Blade conversion
+
+Create a shared layout so the navbar and assets are not duplicated:
+
+```blade
+{{-- resources/views/layouts/app.blade.php --}}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ asset('css/global.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/components.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/screens.css') }}">
+</head>
+s, controllers, validation, and database records.
 
 ## Screens
 
@@ -16,74 +32,6 @@ This folder is a mobile-focused HTML/CSS/JavaScript prototype. The data is curre
 
 Rename the files to Blade views, for example `resources/views/orders/way-check.blade.php`.
 
-## Recommended database structure
-
-Use one `users` table for accounts and distinguish account types with a `role` field:
-
-```text
-users
-- id
-- name
-- email (unique)
-- password
-- address (nullable)
-- phone (nullable)
-- role: shop | user | biker
-- timestamps
-```
-
-For shops and bikers, either use profile tables or keep the prototype’s simple structure:
-
-```text
-shops
-- id
-- user_id
-- name
-- timestamps
-
-bikers
-- id
-- user_id
-- bike_number (nullable)
-- timestamps
-```
-
-Orders should be represented separately:
-
-```text
-orders
-- id
-- shop_id
-- biker_id (nullable)
-- status: pending | delivered | failed
-- customer_name
-- customer_phone
-- customer_address
-- amount
-- photo_path (nullable)
-- delivered_at (nullable)
-- timestamps
-```
-
-## Routes
-
-Example `routes/web.php`:
-
-```php
-Route::middleware('auth')->group(function () {
-    Route::get('/way-check', [OrderController::class, 'create'])->name('orders.create');
-    Route::post('/way-check', [OrderController::class, 'store'])->name('orders.store');
-
-    Route::get('/history', [OrderController::class, 'index'])->name('orders.index');
-    Route::get('/history/{order}', [OrderController::class, 'show'])->name('orders.show');
-
-    Route::resource('shops', ShopController::class)->only(['index', 'store']);
-    Route::resource('bikers', BikerController::class)->only(['index', 'store']);
-    Route::resource('users', UserController::class)->only(['index', 'store']);
-});
-```
-
-Use Laravel’s built-in authentication routes or Fortify/Breeze for `login.html`. Do not expose the internal app drawer on the login screen.
 
 ## Blade conversion
 
