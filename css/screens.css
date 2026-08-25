@@ -107,6 +107,7 @@
 .compact-btn { width:auto; padding:11px 17px; }
 .shop-search { width:100%; padding:12px 14px; border:1px solid #e2e8f0; border-radius:11px; font:inherit; font-size:15px; margin-bottom:14px; outline:none; }
 .shop-search:focus { border-color:#38bdf8; box-shadow:0 0 0 3px rgba(14,165,233,.12); }
+.shop-orders-card { margin-top:0; }.shop-orders-heading { display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:14px; }.shop-orders-heading h2 { color:#0f172a; font-size:19px; }.shop-order-row { padding:12px 0; border-top:1px solid #e2e8f0; }.shop-order-row strong { display:block; color:#0f172a; font-size:13px; }.shop-order-row span { display:block; margin-top:4px; color:#64748b; font-size:12px; }.shop-orders-empty { color:#94a3b8; font-size:13px; text-align:center; padding:18px 0 4px; }
 .shop-list { display:grid; gap:7px; }
 .shop-row { display:flex; align-items:center; gap:11px; width:100%; padding:10px; border:0; border-radius:13px; background:#fff; text-align:left; cursor:pointer; }
 .shop-row:hover { background:#f1f5f9; }.shop-row.selected { background:#0f172a; color:#fff; }
