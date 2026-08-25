@@ -111,7 +111,7 @@
 .shop-list { display:grid; gap:7px; }
 .shop-row { display:flex; align-items:center; gap:11px; width:100%; padding:10px; border:0; border-radius:13px; background:#fff; text-align:left; cursor:pointer; }
 .shop-row:hover { background:#f1f5f9; }.shop-row.selected { background:#0f172a; color:#fff; }
-.shop-avatar { display:grid; place-items:center; flex:0 0 40px; height:40px; border-radius:9px; background:#eff6f9; color:#1e293b; font-weight:800; }.avatar-lime { background:#ccff00; }
+.shop-avatar { display:grid; place-items:center; flex:0 0 40px; height:40px; border-radius:9px; background:#eff6f9; color:#1e293b; font-weight:800; }.avatar-lime { background:#eff6f9; }.shop-row.selected .shop-avatar { background:#ccff00; color:#0f172a; }
 .shop-copy { min-width:0; flex:1; }.shop-copy strong,.shop-copy small { display:block; }.shop-copy strong { font-size:15px; }.shop-copy small { margin-top:2px; color:#64748b; font-size:12px; }.selected .shop-copy small { color:#cbd5e1; }
 .shop-row-actions { display:flex; align-items:center; gap:16px; color:#64748b; font-size:18px; }.selected .shop-row-actions { color:#cbd5e1; }.shop-row-actions b { color:#0ea5a0; font-size:22px; font-weight:400; }.selected .shop-row-actions b { color:#ccff00; }
 .nested-form { margin:14px 0 0; padding:16px; background:#f8fafc; }.shop-order-card { margin-top:0; }.selected-shop-hint { color:#64748b; font-size:13px; margin:5px 0 18px; }.sr-only { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0); }
